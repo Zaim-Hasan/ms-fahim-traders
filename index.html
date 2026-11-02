@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M/S Fahim Traders | Super Shop, General Traders & Ready-Made Garments</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#2563eb',
+                            indigo: '#4f46e5',
+                            orange: '#f97316',
+                            rose: '#f43f5e',
+                            emerald: '#10b981',
+                            dark: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .product-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .gradient-btn {
+            background: linear-gradient(135deg, #f97316 0%, #f43f5e 50%, #4f46e5 100%);
+            background-size: 200% 200%;
+            transition: all 0.4s ease;
+        }
+        .gradient-btn:hover {
+            background-position: right center;
+        }
+        .gradient-badge {
+            background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Top Vibrant Bar -->
+    <div class="bg-gradient-to-r from-orange-500 via-rose-500 to-indigo-600 text-white text-xs md:text-sm py-2 px-4 text-center font-medium shadow-sm">
+        <i class="fa-solid fa-truck-fast mr-2 text-yellow-300"></i> Fast Delivery across Melandoho & Jamalpur! Call to Order: 
+        <a href="tel:01626607261" class="underline font-bold hover:text-yellow-300 ml-1">01626607261</a>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo & Business Name -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-orange-500 via-rose-500 to-indigo-600 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-orange-500/20">
+                        FT
+                    </div>
+                    <div>
+                        <a href="#" class="text-xl font-extrabold bg-gradient-to-r from-orange-600 via-rose-600 to-indigo-600 bg-clip-text text-transparent tracking-tight block leading-tight">
+                            M/S Fahim Traders
+                        </a>
+                        <span class="text-xs text-slate-500 font-medium">Super Shop, General Traders & Garments</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-700">
+                    <a href="#hero" class="hover:text-orange-600 transition">Home</a>
+                    <a href="#categories" class="hover:text-orange-600 transition">Categories</a>
+                    <a href="#products" class="hover:text-orange-600 transition">Products</a>
+                    <a href="#about" class="hover:text-orange-600 transition">About Us</a>
+                    <a href="#contact" class="hover:text-orange-600 transition">Contact</a>
+                </nav>
+
+                <!-- Action Buttons & Cart Trigger -->
+                <div class="flex items-center space-x-4">
+                    <button id="cartBtn" class="relative p-3 text-slate-700 hover:text-orange-600 focus:outline-none transition bg-orange-50 hover:bg-orange-100 rounded-full">
+                        <i class="fa-solid fa-basket-shopping text-lg text-orange-600"></i>
+                        <span id="cartCount" class="absolute -top-1 -right-1 bg-gradient-to-r from-rose-500 to-indigo-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-md">0</span>
+                    </button>
+                    <a href="https://wa.me/8801626607261" target="_blank" class="hidden sm:inline-flex items-center bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-xl font-semibold text-sm transition shadow-md shadow-emerald-500/20">
+                        <i class="fa-brands fa-whatsapp text-lg mr-2"></i> WhatsApp Order
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Colorful Hero Section -->
+    <section id="hero" class="relative bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white py-16 lg:py-24 overflow-hidden">
+        <!-- Ambient Glowing Orbs -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-rose-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-6">
+                <span class="inline-block bg-gradient-to-r from-orange-500 via-rose-500 to-indigo-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                    Trusted Nayanagar Bazar Retailer
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight">
+                    Premium Garments, Fresh Grocery & General Supplies
+                </h1>
+                <p class="text-slate-300 text-base sm:text-lg">
+                    Discover quality ready-made clothing, essential super shop groceries, and everyday household items all under one roof at Nayanagar Bazar, Melandoho.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#products" class="gradient-btn text-white font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-orange-500/20 hover:shadow-xl transition">
+                        Shop Products Now
+                    </a>
+                    <a href="#about" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl border border-white/20 backdrop-blur-sm transition">
+                        Visit Nayanagar Store
+                    </a>
+                </div>
+            </div>
+            <div class="relative flex justify-center">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 p-2 bg-gradient-to-tr from-orange-500/30 via-rose-500/30 to-indigo-500/30">
+                    <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=800&q=80" alt="M/S Fahim Traders Store" class="rounded-2xl object-cover w-full max-w-md h-80 sm:h-96">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Highlights Banner -->
+    <section class="py-10 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="flex items-center space-x-4 p-4 rounded-2xl bg-orange-50/60 border border-orange-100">
+                <div class="w-12 h-12 rounded-xl bg-orange-500 text-white flex items-center justify-center text-xl shadow-md">
+                    <i class="fa-solid fa-shirt"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 text-sm">Ready-Made Garments</h4>
+                    <p class="text-xs text-slate-500">Trendy Clothing Options</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 p-4 rounded-2xl bg-rose-50/60 border border-rose-100">
+                <div class="w-12 h-12 rounded-xl bg-rose-500 text-white flex items-center justify-center text-xl shadow-md">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 text-sm">Super Shop Essentials</h4>
+                    <p class="text-xs text-slate-500">Fresh Grocery & Rice</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 p-4 rounded-2xl bg-indigo-50/60 border border-indigo-100">
+                <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-md">
+                    <i class="fa-solid fa-tags"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 text-sm">General Trading</h4>
+                    <p class="text-xs text-slate-500">Affordable Retail Deals</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 p-4 rounded-2xl bg-emerald-50/60 border border-emerald-100">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-xl shadow-md">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 text-sm">Express Delivery</h4>
+                    <p class="text-xs text-slate-500">Melandoho & Jamalpur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Category & Catalog Section -->
+    <section id="categories" class="py-14 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-3xl font-extrabold text-slate-900">Explore Our Catalog</h2>
+                <p class="text-slate-600 text-sm mt-2">Filter items by category to quickly find your desired products.</p>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10" id="filterContainer">
+                <button onclick="filterCategory('all')" class="filter-btn active gradient-btn text-white font-semibold text-sm px-6 py-2.5 rounded-full shadow-md transition">All Products</button>
+                <button onclick="filterCategory('garments')" class="filter-btn bg-white text-slate-700 border border-slate-200 font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-orange-50 transition">Ready-Made Garments</button>
+                <button onclick="filterCategory('supershop')" class="filter-btn bg-white text-slate-700 border border-slate-200 font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-orange-50 transition">Super Shop & Grocery</button>
+                <button onclick="filterCategory('general')" class="filter-btn bg-white text-slate-700 border border-slate-200 font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-orange-50 transition">General Merchandise</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="productGrid">
+                <!-- JavaScript renders products here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Business Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-orange-600 font-bold text-sm uppercase tracking-wider">About M/S Fahim Traders</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mt-2 mb-4">Your Preferred Shopping & Retail Destination in Melandoho</h2>
+                    <p class="text-slate-600 mb-4 leading-relaxed">
+                        M/S Fahim Traders operates from Shop No: 11, Holding No: 1123, Nayanagar Bazar, Melandoho, Jamalpur. We take immense pride in offering an extensive catalog spanning ready-made fashion garments, daily grocery staples, and high-demand general merchandise.
+                    </p>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Whether you are looking to refresh your family's wardrobe or order weekly super shop items, our team ensures fair prices, genuine products, and rapid local delivery.
+                    </p>
+                    <div class="space-y-3 font-semibold text-slate-800 text-sm">
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-rose-500 mr-3"></i> Top Quality Ready-Made Apparel</div>
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-rose-500 mr-3"></i> Fresh Grocery & Super Shop Daily Staples</div>
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-rose-500 mr-3"></i> Easy Direct WhatsApp & Phone Ordering</div>
+                    </div>
+                </div>
+
+                <!-- Business Details Box -->
+                <div class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white rounded-3xl p-8 shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl"></div>
+                    <h3 class="text-xl font-bold mb-6 border-b border-slate-700 pb-3 text-amber-400">Store Information</h3>
+                    <ul class="space-y-5 text-sm">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-store text-orange-400 mt-1 mr-4 w-5 text-lg"></i>
+                            <div>
+                                <span class="font-semibold block text-slate-300 text-xs uppercase tracking-wider">Business Name</span>
+                                <span class="text-white font-medium text-base">M/S Fahim Traders</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot text-rose-400 mt-1 mr-4 w-5 text-lg"></i>
+                            <div>
+                                <span class="font-semibold block text-slate-300 text-xs uppercase tracking-wider">Store Location</span>
+                                <span class="text-white font-medium">Holding No: 1123, Shop No: 11, Nayanagar Bazar, Melandoho, Jamalpur</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-phone text-indigo-400 mt-1 mr-4 w-5 text-lg"></i>
+                            <div>
+                                <span class="font-semibold block text-slate-300 text-xs uppercase tracking-wider">Phone Number</span>
+                                <a href="tel:01626607261" class="text-amber-400 font-bold text-base hover:underline">01626607261</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-envelope text-orange-400 mt-1 mr-4 w-5 text-lg"></i>
+                            <div>
+                                <span class="font-semibold block text-slate-300 text-xs uppercase tracking-wider">Business Email</span>
+                                <a href="mailto:vuluchanboysti2080@yahoo.com" class="text-amber-400 hover:underline">vuluchanboysti2080@yahoo.com</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Options -->
+    <section id="contact" class="py-16 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-extrabold text-slate-900 mb-2">Order Directly or Inquire</h2>
+            <p class="text-slate-600 text-sm mb-8">Reach out directly to M/S Fahim Traders via Phone or WhatsApp.</p>
+            
+            <div class="grid sm:grid-cols-2 gap-6 text-left">
+                <a href="tel:01626607261" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition flex items-center space-x-4">
+                    <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-500 font-semibold block uppercase">Direct Phone</span>
+                        <span class="text-lg font-extrabold text-slate-900">01626607261</span>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/8801626607261" target="_blank" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition flex items-center space-x-4">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-500 font-semibold block uppercase">WhatsApp Direct</span>
+                        <span class="text-lg font-extrabold text-slate-900">Chat Now</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+                <h3 class="text-white text-lg font-bold mb-3">M/S Fahim Traders</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                    Super Shop, General Traders & Ready-Made Garments Retailer based in Nayanagar Bazar, Melandoho, Jamalpur.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold text-sm mb-3">Quick Navigation</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#hero" class="hover:text-white transition">Home</a></li>
+                    <li><a href="#categories" class="hover:text-white transition">Product Categories</a></li>
+                    <li><a href="#about" class="hover:text-white transition">About Store</a></li>
+                    <li><a href="#contact" class="hover:text-white transition">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold text-sm mb-3">Contact Information</h4>
+                <p class="text-sm">Holding No: 1123, Shop No: 11, Nayanagar Bazar, Melandoho, Jamalpur</p>
+                <p class="text-sm mt-1">Phone: 01626607261</p>
+                <p class="text-sm mt-1">Email: vuluchanboysti2080@yahoo.com</p>
+            </div>
+        </div>
+        <div class="border-t border-slate-800 text-center text-xs text-slate-500 pt-6">
+            &copy; 2026 M/S Fahim Traders. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Dynamic Cart Drawer -->
+    <div id="cartDrawer" class="fixed inset-0 overflow-hidden z-50 hidden">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="toggleCart()"></div>
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+                <div class="p-6 bg-gradient-to-r from-orange-500 via-rose-500 to-indigo-600 text-white flex justify-between items-center">
+                    <h3 class="text-lg font-bold flex items-center gap-2">
+                        <i class="fa-solid fa-basket-shopping"></i> Shopping Cart
+                    </h3>
+                    <button onclick="toggleCart()" class="text-white hover:text-slate-200">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+                <div id="cartItems" class="flex-1 overflow-y-auto p-6 space-y-4">
+                    <!-- Dynamic Cart Items -->
+                </div>
+                <div class="p-6 border-t border-slate-100 bg-slate-50 space-y-4">
+                    <div class="flex justify-between font-bold text-slate-900 text-lg">
+                        <span>Total Amount:</span>
+                        <span id="cartTotal" class="text-rose-600">৳ 0</span>
+                    </div>
+                    <button onclick="checkoutWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-xl font-bold flex items-center justify-center space-x-2 shadow-lg shadow-emerald-600/30 transition">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Order via WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div id="quickViewModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeQuickView()"></div>
+        <div class="bg-white rounded-3xl max-w-lg w-full z-10 overflow-hidden shadow-2xl relative p-6 space-y-4">
+            <button onclick="closeQuickView()" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <img id="qvImage" src="" alt="Product Image" class="w-full h-56 object-cover rounded-2xl">
+            <div>
+                <span id="qvCategory" class="text-xs font-bold text-orange-600 uppercase tracking-wider"></span>
+                <h3 id="qvTitle" class="text-xl font-bold text-slate-900 mt-1"></h3>
+                <p id="qvPrice" class="text-xl font-extrabold text-rose-600 mt-1"></p>
+                <p id="qvDescription" class="text-sm text-slate-600 mt-2 leading-relaxed"></p>
+            </div>
+            <button id="qvAddToCartBtn" class="w-full gradient-btn text-white font-bold py-3.5 rounded-xl transition shadow-lg shadow-orange-500/20">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Demo Product Catalog matching business lines
+        const products = [
+            {
+                id: 1,
+                name: "Men's Slim-Fit Casual Denim Shirt",
+                category: "garments",
+                price: 1290,
+                image: "https://images.unsplash.com/photo-1588359348347-9bc6cbaa689e?auto=format&fit=crop&w=600&q=80",
+                description: "Stylish, breathable 100% cotton casual denim shirt suitable for daily and office wear."
+            },
+            {
+                id: 2,
+                name: "Women's Designer Embroidered Three-Piece",
+                category: "garments",
+                price: 2350,
+                image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=600&q=80",
+                description: "Elegant ready-made cotton salwar kameez suit with detailed embroidery."
+            },
+            {
+                id: 3,
+                name: "Kids Stretchable Casual Jeans",
+                category: "garments",
+                price: 850,
+                image: "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=600&q=80",
+                description: "Comfortable and durable jeans designed for active everyday wear for kids."
+            },
+            {
+                id: 4,
+                name: "Aromatic Premium Minikat Rice (5kg)",
+                category: "supershop",
+                price: 390,
+                image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
+                description: "Clean, fine long-grain white rice sourced directly for family consumption."
+            },
+            {
+                id: 5,
+                name: "Pure Sunflower Cooking Oil (2L)",
+                category: "supershop",
+                price: 360,
+                image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+                description: "Cholesterol-free healthy refined oil for everyday cooking needs."
+            },
+            {
+                id: 6,
+                name: "Strong Blend Black Tea (500g)",
+                category: "supershop",
+                price: 250,
+                image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
+                description: "Richly aromatic and strong black tea blend from top tea estates."
+            },
+            {
+                id: 7,
+                name: "Double-Wall Insulated Steel Flask (1L)",
+                category: "general",
+                price: 690,
+                image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=600&q=80",
+                description: "Durable stainless steel thermal water bottle that retains heat/cold for hours."
+            },
+            {
+                id: 8,
+                name: "Rechargeable Eye-Care LED Study Lamp",
+                category: "general",
+                price: 950,
+                image: "https://images.unsplash.com/photo-1534073828943-f801091bb18c?auto=format&fit=crop&w=600&q=80",
+                description: "Modern adjustable table lamp with multiple brightness settings."
+            }
+        ];
+
+        let cart = [];
+
+        // Render Product Catalog
+        function renderProducts(items) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = items.map(product => `
+                <div class="product-card bg-white rounded-3xl border border-slate-100 overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300">
+                            <button onclick="openQuickView(${product.id})" class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm text-slate-800 p-2 rounded-full shadow hover:bg-white transition text-xs font-semibold px-3 flex items-center gap-1">
+                                <i class="fa-regular fa-eye"></i> Quick View
+                            </button>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs font-bold text-orange-600 uppercase tracking-wider">${product.category}</span>
+                            <h3 class="font-bold text-slate-900 text-base mt-1 line-clamp-1">${product.name}</h3>
+                            <p class="text-xs text-slate-500 mt-1 line-clamp-2">${product.description}</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex items-center justify-between mt-2">
+                        <span class="text-lg font-extrabold text-rose-600">৳ ${product.price}</span>
+                        <button onclick="addToCart(${product.id})" class="gradient-btn text-white px-4 py-2 rounded-xl text-xs font-bold shadow-md transition flex items-center space-x-1">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <span>Add</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter Category Logic
+        function filterCategory(cat) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('gradient-btn', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-700');
+            });
+            event.target.classList.remove('bg-white', 'text-slate-700');
+            event.target.classList.add('gradient-btn', 'text-white');
+
+            if (cat === 'all') {
+                renderProducts(products);
+            } else {
+                const filtered = products.filter(p => p.category === cat);
+                renderProducts(filtered);
+            }
+        }
+
+        // Cart Operations
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+            updateCart();
+            toggleCart(true);
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
+        }
+
+        function changeQty(productId, delta) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    updateCart();
+                }
+            }
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cartItems');
+            const cartCount = document.getElementById('cartCount');
+            const cartTotal = document.getElementById('cartTotal');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+            cartCount.textContent = totalItems;
+            cartTotal.textContent = `৳ ${totalPrice}`;
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="text-center py-12 text-slate-400">
+                        <i class="fa-solid fa-basket-shopping text-4xl mb-2"></i>
+                        <p class="text-sm">Your shopping cart is empty.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            cartItems.innerHTML = cart.map(item => `
+                <div class="flex items-center space-x-4 border-b border-slate-100 pb-3">
+                    <img src="${item.image}" class="w-16 h-16 object-cover rounded-xl">
+                    <div class="flex-1">
+                        <h4 class="font-bold text-sm text-slate-900">${item.name}</h4>
+                        <span class="text-xs text-rose-600 font-bold">৳ ${item.price}</span>
+                        <div class="flex items-center space-x-2 mt-1">
+                            <button onclick="changeQty(${item.id}, -1)" class="w-6 h-6 bg-slate-100 text-slate-600 rounded-lg flex items-center justify-center font-bold text-xs">-</button>
+                            <span class="text-xs font-bold">${item.qty}</span>
+                            <button onclick="changeQty(${item.id}, 1)" class="w-6 h-6 bg-slate-100 text-slate-600 rounded-lg flex items-center justify-center font-bold text-xs">+</button>
+                        </div>
+                    </div>
+                    <button onclick="removeFromCart(${item.id})" class="text-red-500 hover:text-red-700 text-xs p-1">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function toggleCart(open = null) {
+            const drawer = document.getElementById('cartDrawer');
+            if (open === true) {
+                drawer.classList.remove('hidden');
+            } else if (open === false) {
+                drawer.classList.add('hidden');
+            } else {
+                drawer.classList.toggle('hidden');
+            }
+        }
+
+        // Quick View Modal Controls
+        function openQuickView(id) {
+            const product = products.find(p => p.id === id);
+            document.getElementById('qvImage').src = product.image;
+            document.getElementById('qvCategory').textContent = product.category;
+            document.getElementById('qvTitle').textContent = product.name;
+            document.getElementById('qvPrice').textContent = `৳ ${product.price}`;
+            document.getElementById('qvDescription').textContent = product.description;
+            
+            const btn = document.getElementById('qvAddToCartBtn');
+            btn.onclick = function() {
+                addToCart(product.id);
+                closeQuickView();
+            };
+
+            document.getElementById('quickViewModal').classList.remove('hidden');
+        }
+
+        function closeQuickView() {
+            document.getElementById('quickViewModal').classList.add('hidden');
+        }
+
+        // WhatsApp Checkout Formatting
+        function checkoutWhatsApp() {
+            if (cart.length === 0) {
+                alert("Please add items to your cart first!");
+                return;
+            }
+
+            let message = "Hello M/S Fahim Traders, I would like to place an order:\n\n";
+            cart.forEach(item => {
+                message += `• ${item.name} (x${item.qty}) - ৳${item.price * item.qty}\n`;
+            });
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            message += `\n*Total Amount: ৳${total}*\n`;
+            message += `\nPlease confirm availability and delivery to Melandoho / Jamalpur.`;
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/8801626607261?text=${encodedMessage}`, '_blank');
+        }
+
+        document.getElementById('cartBtn').addEventListener('click', () => toggleCart());
+
+        // Initial Load
+        renderProducts(products);
+    </script>
+</body>
+</html>
